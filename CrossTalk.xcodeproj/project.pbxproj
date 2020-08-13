@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		152A182624E53A8D001824D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A182524E53A8D001824D4 /* AppDelegate.swift */; };
+		152A182824E53A8D001824D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A182724E53A8D001824D4 /* SceneDelegate.swift */; };
+		152A182A24E53A8D001824D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A182924E53A8D001824D4 /* ContentView.swift */; };
+		152A182C24E53A90001824D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152A182B24E53A90001824D4 /* Assets.xcassets */; };
+		152A182F24E53A90001824D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152A182E24E53A90001824D4 /* Preview Assets.xcassets */; };
+		152A183224E53A90001824D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152A183024E53A90001824D4 /* LaunchScreen.storyboard */; };
+		152A183D24E53A90001824D4 /* CrossTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A183C24E53A90001824D4 /* CrossTalkTests.swift */; };
+		152A184824E53A90001824D4 /* CrossTalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A184724E53A90001824D4 /* CrossTalkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		152A183924E53A90001824D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 152A181A24E53A8D001824D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 152A182124E53A8D001824D4;
+			remoteInfo = CrossTalk;
+		};
+		152A184424E53A90001824D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 152A181A24E53A8D001824D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 152A182124E53A8D001824D4;
+			remoteInfo = CrossTalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		152A182224E53A8D001824D4 /* CrossTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		152A182524E53A8D001824D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		152A182724E53A8D001824D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		152A182924E53A8D001824D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		152A182B24E53A90001824D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		152A182E24E53A90001824D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		152A183124E53A90001824D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		152A183324E53A90001824D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		152A183824E53A90001824D4 /* CrossTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		152A183C24E53A90001824D4 /* CrossTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossTalkTests.swift; sourceTree = "<group>"; };
+		152A183E24E53A90001824D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		152A184324E53A90001824D4 /* CrossTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		152A184724E53A90001824D4 /* CrossTalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossTalkUITests.swift; sourceTree = "<group>"; };
+		152A184924E53A90001824D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		152A181F24E53A8D001824D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152A183524E53A90001824D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152A184024E53A90001824D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		152A181924E53A8D001824D4 = {
+			isa = PBXGroup;
+			children = (
+				152A182424E53A8D001824D4 /* CrossTalk */,
+				152A183B24E53A90001824D4 /* CrossTalkTests */,
+				152A184624E53A90001824D4 /* CrossTalkUITests */,
+				152A182324E53A8D001824D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		152A182324E53A8D001824D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				152A182224E53A8D001824D4 /* CrossTalk.app */,
+				152A183824E53A90001824D4 /* CrossTalkTests.xctest */,
+				152A184324E53A90001824D4 /* CrossTalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		152A182424E53A8D001824D4 /* CrossTalk */ = {
+			isa = PBXGroup;
+			children = (
+				152A182524E53A8D001824D4 /* AppDelegate.swift */,
+				152A182724E53A8D001824D4 /* SceneDelegate.swift */,
+				152A182924E53A8D001824D4 /* ContentView.swift */,
+				152A182B24E53A90001824D4 /* Assets.xcassets */,
+				152A183024E53A90001824D4 /* LaunchScreen.storyboard */,
+				152A183324E53A90001824D4 /* Info.plist */,
+				152A182D24E53A90001824D4 /* Preview Content */,
+			);
+			path = CrossTalk;
+			sourceTree = "<group>";
+		};
+		152A182D24E53A90001824D4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				152A182E24E53A90001824D4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		152A183B24E53A90001824D4 /* CrossTalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				152A183C24E53A90001824D4 /* CrossTalkTests.swift */,
+				152A183E24E53A90001824D4 /* Info.plist */,
+			);
+			path = CrossTalkTests;
+			sourceTree = "<group>";
+		};
+		152A184624E53A90001824D4 /* CrossTalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				152A184724E53A90001824D4 /* CrossTalkUITests.swift */,
+				152A184924E53A90001824D4 /* Info.plist */,
+			);
+			path = CrossTalkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		152A182124E53A8D001824D4 /* CrossTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152A184C24E53A90001824D4 /* Build configuration list for PBXNativeTarget "CrossTalk" */;
+			buildPhases = (
+				152A181E24E53A8D001824D4 /* Sources */,
+				152A181F24E53A8D001824D4 /* Frameworks */,
+				152A182024E53A8D001824D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrossTalk;
+			productName = CrossTalk;
+			productReference = 152A182224E53A8D001824D4 /* CrossTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		152A183724E53A90001824D4 /* CrossTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152A184F24E53A90001824D4 /* Build configuration list for PBXNativeTarget "CrossTalkTests" */;
+			buildPhases = (
+				152A183424E53A90001824D4 /* Sources */,
+				152A183524E53A90001824D4 /* Frameworks */,
+				152A183624E53A90001824D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				152A183A24E53A90001824D4 /* PBXTargetDependency */,
+			);
+			name = CrossTalkTests;
+			productName = CrossTalkTests;
+			productReference = 152A183824E53A90001824D4 /* CrossTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		152A184224E53A90001824D4 /* CrossTalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152A185224E53A90001824D4 /* Build configuration list for PBXNativeTarget "CrossTalkUITests" */;
+			buildPhases = (
+				152A183F24E53A90001824D4 /* Sources */,
+				152A184024E53A90001824D4 /* Frameworks */,
+				152A184124E53A90001824D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				152A184524E53A90001824D4 /* PBXTargetDependency */,
+			);
+			name = CrossTalkUITests;
+			productName = CrossTalkUITests;
+			productReference = 152A184324E53A90001824D4 /* CrossTalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		152A181A24E53A8D001824D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Pankaj Sachdeva";
+				TargetAttributes = {
+					152A182124E53A8D001824D4 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					152A183724E53A90001824D4 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 152A182124E53A8D001824D4;
+					};
+					152A184224E53A90001824D4 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 152A182124E53A8D001824D4;
+					};
+				};
+			};
+			buildConfigurationList = 152A181D24E53A8D001824D4 /* Build configuration list for PBXProject "CrossTalk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 152A181924E53A8D001824D4;
+			productRefGroup = 152A182324E53A8D001824D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				152A182124E53A8D001824D4 /* CrossTalk */,
+				152A183724E53A90001824D4 /* CrossTalkTests */,
+				152A184224E53A90001824D4 /* CrossTalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		152A182024E53A8D001824D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152A183224E53A90001824D4 /* LaunchScreen.storyboard in Resources */,
+				152A182F24E53A90001824D4 /* Preview Assets.xcassets in Resources */,
+				152A182C24E53A90001824D4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152A183624E53A90001824D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152A184124E53A90001824D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		152A181E24E53A8D001824D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152A182624E53A8D001824D4 /* AppDelegate.swift in Sources */,
+				152A182824E53A8D001824D4 /* SceneDelegate.swift in Sources */,
+				152A182A24E53A8D001824D4 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152A183424E53A90001824D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152A183D24E53A90001824D4 /* CrossTalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152A183F24E53A90001824D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152A184824E53A90001824D4 /* CrossTalkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		152A183A24E53A90001824D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 152A182124E53A8D001824D4 /* CrossTalk */;
+			targetProxy = 152A183924E53A90001824D4 /* PBXContainerItemProxy */;
+		};
+		152A184524E53A90001824D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 152A182124E53A8D001824D4 /* CrossTalk */;
+			targetProxy = 152A184424E53A90001824D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		152A183024E53A90001824D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152A183124E53A90001824D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		152A184A24E53A90001824D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		152A184B24E53A90001824D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		152A184D24E53A90001824D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CrossTalk/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CrossTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapps.CrossTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		152A184E24E53A90001824D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CrossTalk/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CrossTalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapps.CrossTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		152A185024E53A90001824D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CrossTalkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapps.CrossTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrossTalk.app/CrossTalk";
+			};
+			name = Debug;
+		};
+		152A185124E53A90001824D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CrossTalkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapps.CrossTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CrossTalk.app/CrossTalk";
+			};
+			name = Release;
+		};
+		152A185324E53A90001824D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CrossTalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapps.CrossTalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CrossTalk;
+			};
+			name = Debug;
+		};
+		152A185424E53A90001824D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CrossTalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.testapps.CrossTalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CrossTalk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		152A181D24E53A8D001824D4 /* Build configuration list for PBXProject "CrossTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152A184A24E53A90001824D4 /* Debug */,
+				152A184B24E53A90001824D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152A184C24E53A90001824D4 /* Build configuration list for PBXNativeTarget "CrossTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152A184D24E53A90001824D4 /* Debug */,
+				152A184E24E53A90001824D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152A184F24E53A90001824D4 /* Build configuration list for PBXNativeTarget "CrossTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152A185024E53A90001824D4 /* Debug */,
+				152A185124E53A90001824D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152A185224E53A90001824D4 /* Build configuration list for PBXNativeTarget "CrossTalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152A185324E53A90001824D4 /* Debug */,
+				152A185424E53A90001824D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 152A181A24E53A8D001824D4 /* Project object */;
+}
