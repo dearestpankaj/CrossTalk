@@ -30,7 +30,7 @@ struct ContentView: View {
                                     .padding(.leading, message.isFromLocalUser ? 20 : 8)
                                     .padding(.trailing, message.isFromLocalUser ? 8 : 20)
                                     .padding(.vertical, 5)
-                                if (message.isFromLocalUser == false){
+                                if message.isFromLocalUser == false {
                                     Spacer()
                                 }
                             }
@@ -38,7 +38,45 @@ struct ContentView: View {
                     }
                 }
                 .navigationBarTitle(Text(viewModel.appState.rawValue), displayMode: .inline)
+                HStack {
+                    Button(action: {
+                        self.showActionSheet = true
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .padding(.horizontal, 8)
+                    TextField(viewModel.appState.notConnected ? "Inactive" : "Add message",
+                    text: $viewModel.newMessageText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disabled(viewModel.appState.notConnected)
+                    Button(action: {
+                        self.viewModel.clear()
+                    }) {
+                        Image(systemName: "xmark.circle")
+                    }
+                    .disabled(viewModel.newMessageTextIsEmpty)
+                    
+                    Button(action: {
+                        self.viewModel.send()
+                    }) {
+                        Image(systemName: "paperplane")
+                    }
+                    .disabled(viewModel.newMessageTextIsEmpty)
+                    .padding(.horizontal, 8)
+                }
+                .padding()
+                .background(colorScheme == .dark ? Color.black : Color.white)
+                .offset(y: viewModel.keyboardOffset)
+                .animation(.easeInOut(duration: viewModel.keyboardAnimationDuration))
             }
+            .animation(.easeInOut)
+            .onTapGesture {
+                UIApplication.shared.windows
+                    .first { $0.isKeyWindow }?.endEditing(true)
+            }
+        }
+        .actionSheet(isPresented: $showActionSheet) {
+            ActionSheet(title: Text(viewModel.actionSheetTitle), message: nil, buttons: actionsheetButtons())
         }
     }
 
@@ -73,6 +111,15 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .previewDevice("iPhone 11 Pro Max")
+                .previewDisplayName("iPhone 11 Pro Max")
+
+            ContentView()
+                .previewDevice("iPhone SE")
+                .previewDisplayName("iPhone SE")
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
