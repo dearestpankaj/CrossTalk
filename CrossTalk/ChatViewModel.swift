@@ -19,28 +19,23 @@ final class ChatViewModel: NSObject, ObservableObject {
 
     @Published private(set) var appState = AppState.inactive
     @Published var newMessageText = ""
-    @Published private(set) var messages = [Message(username: User.local.name, value: "Hello World", timestamp: "")]
+    @Published private(set) var messages = [Message(username: User.local.name, value: "Hello World",
+                                                    timestamp: "", languageCode: "en",
+                                                    translatedLanguageCode: "", translatedValue: "")]
+    @Published var isTranslating = false
     @Published private(set) var keyboardOffset: CGFloat = 0
     @Published private(set) var keyboardAnimationDuration: Double = 0
 
-    var timestamp: String { formatter.string(from: Date()) }
-    var newMessageTextIsEmpty: Bool { newMessageText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-
-    var actionSheetTitle: String {
-        switch appState {
-        case .inactive:
-            return "Do you want to host or join a chat?"
-        case .searchingForChat, .connectedToHost:
-            return "Do you want to disconnect?"
-        case .hostingWithPeers, .hostingAwaitingPeers:
-            return "Do you want to stop hosting?"
-        }
-    }
     lazy var session: MCSession = {
         let session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         session.delegate = self
         return session
     }()
+    var timestamp: String { formatter.string(from: Date()) }
+    var newMessageTextIsEmpty: Bool { newMessageText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+    let translationLanguageCode = "es"
+    var actionSheetTitle = "Actions"
+
     private lazy var peerID = MCPeerID(displayName: User.local.name)
     private var hostID: MCPeerID?
     private let formatter = DateFormatter(dateStyle: .short, timeStyle: .short)
@@ -49,6 +44,8 @@ final class ChatViewModel: NSObject, ObservableObject {
                                                             serviceType: Self.serviceType)
     private lazy var browser = MCNearbyServiceBrowser(peer: peerID, serviceType: Self.serviceType)
     private var subsriptions = Set<AnyCancellable>()
+    private lazy var decoder = JSONDecoder()
+    private lazy var translationService = TranslationService()
 
     override init() {
         super.init()
@@ -75,7 +72,9 @@ final class ChatViewModel: NSObject, ObservableObject {
         guard newMessageTextIsEmpty == false else {
             return
         }
-        let message = Message(username: User.local.name, value: newMessageText, timestamp: timestamp)
+        let message = Message(username: User.local.name,
+                              value: newMessageText, timestamp: timestamp, languageCode: "",
+                              translatedLanguageCode: "", translatedValue: "")
         insert(message: message)
         newMessageText = ""
         do {
@@ -109,9 +108,26 @@ final class ChatViewModel: NSObject, ObservableObject {
         }
     }
 
+    func fetchTranslation(for messsge: Message, to translationLanguageCode: String) -> AnyPublisher<Message, Never> {
+        guard messsge.languageCode != translationLanguageCode else {
+            return Just(messsge).eraseToAnyPublisher()
+        }
+        return translationService.publisher(for: messsge, to: translationLanguageCode)
+        .retry(1)
+            .decode(type: TranslationResponse.self, decoder: decoder)
+            .compactMap { $0.translations.first }
+            .map { translatedValue in
+                Message(username: messsge.username, value: messsge.value, timestamp: messsge.timestamp,
+                        languageCode: messsge.languageCode, translatedLanguageCode: translationLanguageCode,
+                        translatedValue: translatedValue == messsge.value ? "" : translatedValue)
+        }
+    .replaceError(with: messsge)
+    .eraseToAnyPublisher()
+    }
+
     private func insert(message: Message) {
         DispatchQueue.main.async { [weak self] in
-            self?.messages.insert(message, at: 0)
+            self?.messages.append(message)
         }
     }
 }
@@ -130,7 +146,17 @@ extension ChatViewModel: MCSessionDelegate {
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         do {
-            insert(message: try JSONDecoder().decode(Message.self, from: data))
+            let message = try decoder.decode(Message.self, from: data)
+            if isTranslating {
+                fetchTranslation(for: message, to: translationLanguageCode)
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveValue: { [weak self] message in
+                    self?.insert(message: message)
+                })
+                    .store(in: &subsriptions)
+            } else {
+                insert(message: try JSONDecoder().decode(Message.self, from: data))
+            }
         } catch {
             print(error)
         }

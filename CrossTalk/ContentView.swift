@@ -3,7 +3,7 @@ import MultipeerConnectivity
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @ObservedObject private var viewModel = ChatViewModel()
+    @EnvironmentObject private var viewModel: ChatViewModel
     @State private var showActionSheet = false
 
     private let formatter = DateFormatter(dateStyle: .short, timeStyle: .short)
@@ -11,59 +11,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView {
-                    VStack {
-                        ForEach(viewModel.messages) { message in
-                            Text(self.caption(for: message))
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            HStack {
-                                if message.isFromLocalUser {
-                                    Spacer()
-                                }
-                                Text(message.value)
-                                    .foregroundColor(.white)
-                                    .font(.body)
-                                    .padding()
-                                    .background(message.isFromLocalUser ? Color.blue : Color.gray)
-                                    .cornerRadius(20)
-                                    .padding(.leading, message.isFromLocalUser ? 20 : 8)
-                                    .padding(.trailing, message.isFromLocalUser ? 8 : 20)
-                                    .padding(.vertical, 5)
-                                if message.isFromLocalUser == false {
-                                    Spacer()
-                                }
-                            }
-                        }
-                    }
-                }
+                ChatScrollView()
                 .navigationBarTitle(Text(viewModel.appState.rawValue), displayMode: .inline)
-                HStack {
-                    Button(action: {
-                        self.showActionSheet = true
-                    }) {
-                        Image(systemName: "square.and.arrow.up")
-                    }
-                    .padding(.horizontal, 8)
-                    TextField(viewModel.appState.notConnected ? "Inactive" : "Add message",
-                    text: $viewModel.newMessageText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .disabled(viewModel.appState.notConnected)
-                    Button(action: {
-                        self.viewModel.clear()
-                    }) {
-                        Image(systemName: "xmark.circle")
-                    }
-                    .disabled(viewModel.newMessageTextIsEmpty)
-                    
-                    Button(action: {
-                        self.viewModel.send()
-                    }) {
-                        Image(systemName: "paperplane")
-                    }
-                    .disabled(viewModel.newMessageTextIsEmpty)
-                    .padding(.horizontal, 8)
-                }
+                ToolbarView(showActionSheet: $showActionSheet)
                 .padding()
                 .background(colorScheme == .dark ? Color.black : Color.white)
                 .offset(y: viewModel.keyboardOffset)
@@ -76,13 +26,12 @@ struct ContentView: View {
             }
         }
         .actionSheet(isPresented: $showActionSheet) {
-            ActionSheet(title: Text(viewModel.actionSheetTitle), message: nil, buttons: actionsheetButtons())
+            ActionSheet(title: Text(viewModel.actionSheetTitle), message: nil, buttons: actionSheetButtons())
         }
     }
 
-    private func actionsheetButtons() -> [ActionSheet.Button] {
+    private func actionSheetButtons() -> [ActionSheet.Button] {
         var buttons = [ActionSheet.Button]()
-
         switch viewModel.appState {
         case .inactive:
             buttons += [
@@ -95,6 +44,11 @@ struct ContentView: View {
             ]
         default:
             buttons += [
+                .default(Text(viewModel.isTranslating ?
+                    "Stop Translating" :
+                    "Start Translating to Dutch")) {
+                        self.viewModel.isTranslating.toggle()
+                },
                 .default(Text("Disconnect")) {
                     self.viewModel.disconnect()
                 }
@@ -102,10 +56,6 @@ struct ContentView: View {
         }
         buttons.append(.cancel())
         return buttons
-    }
-
-    private func caption(for message: Message) -> String {
-        (message.isFromLocalUser ? "" : "\(message.username) - \(message.timestamp)")
     }
 }
 
@@ -120,6 +70,38 @@ struct ContentView_Previews: PreviewProvider {
                 .previewDevice("iPhone SE")
                 .previewDisplayName("iPhone SE")
                 .environment(\.colorScheme, .dark)
+        }
+    }
+}
+
+struct ToolbarView: View {
+    @EnvironmentObject private var viewModel: ChatViewModel
+    @Binding var showActionSheet: Bool
+    var body: some View {
+        HStack {
+            Button(action: {
+                self.showActionSheet = true
+            }) {
+                Image(systemName: "square.and.arrow.up")
+            }
+            .padding(.horizontal, 8)
+            TextField(viewModel.appState.notConnected ? "Inactive" : "Add message",
+                      text: $viewModel.newMessageText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .disabled(viewModel.appState.notConnected)
+            Button(action: {
+                self.viewModel.clear()
+            }) {
+                Image(systemName: "xmark.circle")
+            }
+            .disabled(viewModel.newMessageTextIsEmpty)
+            Button(action: {
+                self.viewModel.send()
+            }) {
+                Image(systemName: "paperplane")
+            }
+            .disabled(viewModel.newMessageTextIsEmpty)
+            .padding(.horizontal, 8)
         }
     }
 }

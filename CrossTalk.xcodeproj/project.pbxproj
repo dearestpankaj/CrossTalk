@@ -19,6 +19,10 @@
 		152A186024E552B6001824D4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A185F24E552B6001824D4 /* Message.swift */; };
 		152A186224E5572E001824D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A186124E5572E001824D4 /* User.swift */; };
 		152A186424E557E9001824D4 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152A186324E557E9001824D4 /* ChatViewModel.swift */; };
+		156A98FD24EA8E6B0079CD04 /* ChatScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A98FC24EA8E6B0079CD04 /* ChatScrollView.swift */; };
+		156A98FF24EA8EB20079CD04 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A98FE24EA8EB20079CD04 /* MessageView.swift */; };
+		156A990324EAD5A40079CD04 /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A990224EAD5A40079CD04 /* TranslationResponse.swift */; };
+		156A990624EAD82C0079CD04 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A990524EAD82C0079CD04 /* TranslationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		152A185F24E552B6001824D4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		152A186124E5572E001824D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		152A186324E557E9001824D4 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		156A98FC24EA8E6B0079CD04 /* ChatScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScrollView.swift; sourceTree = "<group>"; };
+		156A98FE24EA8EB20079CD04 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		156A990224EAD5A40079CD04 /* TranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
+		156A990524EAD82C0079CD04 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		152A182424E53A8D001824D4 /* CrossTalk */ = {
 			isa = PBXGroup;
 			children = (
+				156A990424EAD81B0079CD04 /* Services */,
 				152A185C24E550C9001824D4 /* ViewModels */,
 				152A185B24E550C2001824D4 /* Views */,
 				152A185A24E550BB001824D4 /* Models */,
@@ -169,6 +178,7 @@
 			children = (
 				152A185F24E552B6001824D4 /* Message.swift */,
 				152A186124E5572E001824D4 /* User.swift */,
+				156A990224EAD5A40079CD04 /* TranslationResponse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -176,6 +186,8 @@
 		152A185B24E550C2001824D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				156A98FC24EA8E6B0079CD04 /* ChatScrollView.swift */,
+				156A98FE24EA8EB20079CD04 /* MessageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -186,6 +198,14 @@
 				152A186324E557E9001824D4 /* ChatViewModel.swift */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		156A990424EAD81B0079CD04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				156A990524EAD82C0079CD04 /* TranslationService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,10 +360,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156A990624EAD82C0079CD04 /* TranslationService.swift in Sources */,
 				152A185E24E5522F001824D4 /* DateFormatter+.swift in Sources */,
+				156A98FD24EA8E6B0079CD04 /* ChatScrollView.swift in Sources */,
 				152A186424E557E9001824D4 /* ChatViewModel.swift in Sources */,
+				156A98FF24EA8EB20079CD04 /* MessageView.swift in Sources */,
 				152A182624E53A8D001824D4 /* AppDelegate.swift in Sources */,
 				152A186224E5572E001824D4 /* User.swift in Sources */,
+				156A990324EAD5A40079CD04 /* TranslationResponse.swift in Sources */,
 				152A186024E552B6001824D4 /* Message.swift in Sources */,
 				152A182824E53A8D001824D4 /* SceneDelegate.swift in Sources */,
 				152A182A24E53A8D001824D4 /* ContentView.swift in Sources */,
